@@ -283,6 +283,7 @@ ja:
       opendata/list_node_setting: フォルダー設定
       opendata/cms_ref/page: ページ連携
       opendata/cms_ref/attachment_file: 添付ファイル連携
+      opendata/dataset_importer/license: データセットインポート
 
   cms:
     nodes:

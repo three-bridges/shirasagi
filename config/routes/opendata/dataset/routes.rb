@@ -25,6 +25,7 @@ SS::Application.routes.draw do
     resources :dataset_groups, concerns: :deletion, module: :dataset do
       get "search" => "dataset_groups/search#index", on: :collection
     end
+    resources :dataset_import, concerns: :deletion, module: :dataset
     resources :datasets, concerns: [:deletion, :copy, :command], module: :dataset do
       get "search" => "datasets/search#index", on: :collection
       get :check_for_update, on: :member
@@ -51,7 +52,6 @@ SS::Application.routes.draw do
         get "file" => "url_resources#download"
         get "content" => "url_resources#content"
       end
-
     end
     resources :search_datasets, concerns: :deletion, module: :dataset
     resources :search_dataset_groups, concerns: :deletion, module: :dataset

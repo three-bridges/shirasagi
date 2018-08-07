@@ -12,6 +12,7 @@ class Opendata::Dataset
   include Cms::Addon::Release
   include Contact::Addon::Page
   include Cms::Addon::RelatedPage
+  include Opendata::Addon::DatasetImporter::Dataset
   include Cms::Addon::GroupPermission
   include Workflow::MemberPermission
   include Opendata::DatasetSearchable
