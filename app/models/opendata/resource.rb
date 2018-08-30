@@ -3,7 +3,7 @@ class Opendata::Resource
   include Opendata::Resource::Model
   include Opendata::Addon::RdfStore
   include Opendata::Addon::CmsRef::AttachmentFile
-  include Opendata::Addon::DatasetImporter::Resource
+  include Opendata::Addon::DatasetImport::Resource
 
   attr_accessor :workflow, :status
 

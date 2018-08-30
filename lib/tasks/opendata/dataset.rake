@@ -10,4 +10,9 @@ namespace :opendata do
       end
     end
   end
+
+  task report_datasets: :environment do
+    puts "Please input importer id: importer=[id]" or exit if ENV['importer'].blank?
+    ::Opendata::ReportDatasetJob.perform_now(ENV['importer'])
+  end
 end

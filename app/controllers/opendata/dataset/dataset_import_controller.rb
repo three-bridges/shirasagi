@@ -4,17 +4,16 @@ class Opendata::Dataset::DatasetImportController < ApplicationController
 
   helper Opendata::FormHelper
 
-  model Opendata::DatasetImporter
+  model Opendata::DatasetImport::Importer
 
   navi_view "opendata/main/navi"
-  #menu_view nil
 
   def fix_params
     { cur_user: @cur_user, cur_site: @cur_site, cur_node: @cur_node }
   end
 
   def index
-    @items = Opendata::DatasetImporter.site(@cur_site).node(@cur_node)
+    @items = Opendata::DatasetImport::Importer.site(@cur_site).node(@cur_node)
       .allow(:read, @cur_user, site: @cur_site)
   end
 end

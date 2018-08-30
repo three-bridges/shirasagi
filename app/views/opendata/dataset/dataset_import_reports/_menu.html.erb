@@ -1,0 +1,9 @@
+<% if params[:action] =~ /dataset/ %>
+<nav class="nav-menu">
+  <%= link_to t('ss.links.back'), opendata_dataset_import_report_path(id: @item.report_id), class: "back-to-index" %>
+</nav>
+<% else %>
+<nav class="nav-menu">
+  <%= link_to t('ss.links.back'), opendata_dataset_import_path(id: @item.importer_id), class: "back-to-index" %>
+</nav>
+<% end %>

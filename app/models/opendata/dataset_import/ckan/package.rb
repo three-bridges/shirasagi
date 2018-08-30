@@ -1,4 +1,4 @@
-module Ckan
+module Opendata::DatasetImport::Ckan
   class Package
     attr_accessor :url
 

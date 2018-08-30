@@ -147,6 +147,7 @@ GEM
     dotenv-rails (2.4.0)
       dotenv (= 2.4.0)
       railties (>= 3.2, < 6.0)
+    down (4.5.0)
     dynamic_form (1.1.4)
     ebnf (1.1.2)
       rdf (>= 2.2, < 4.0)
@@ -592,6 +593,7 @@ DEPENDENCIES
   diff-lcs
   diffy
   dotenv-rails
+  down
   dynamic_form
   elasticsearch
   factory_bot_rails

@@ -1,0 +1,22 @@
+<table class="index">
+
+    <% resources = @item.resources.order_by(order: 1) %>
+    <% errors_style = @item.errors.present? ? "style=\"background-color: #ffdada;\"" : "" %>
+
+    <tr data-id="<% @item.id %>" <%= errors_style %>>
+      <td rowspan="<%= resources.size + 1 %>">
+        <%= link_to "#{@item.name} (#{number_to_human_size(@item.size)})", { action: :dataset, dataset_id: @item.id } %>
+      </td>
+      <td>
+        <% resource = resources.shift %>
+        <%= "#{resource.filename} (#{number_to_human_size(resource.size)})" %>
+      </td>
+    </tr>
+
+    <% resources.each do |resource| %>
+      <tr <%= errors_style %>>
+        <td><%= "#{resource.filename} (#{number_to_human_size(resource.size)})" %></td>
+      </tr>
+    <% end %>
+
+</table>

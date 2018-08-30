@@ -1,4 +1,4 @@
-module Opendata::Addon::DatasetImporter::Dataset
+module Opendata::Addon::DatasetImport::Dataset
   extend SS::Addon
   extend ActiveSupport::Concern
 

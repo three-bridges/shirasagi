@@ -1,0 +1,16 @@
+<% return "" if @item.reports.blank? %>
+
+<dl class="see mod-opendata-dataset_import-report">
+  <dd class="wide">
+    <table class="index">
+      <% @item.reports.each do |report| %>
+        <tr>
+          <td>
+            <%= link_to report.created.strftime("%Y/%m/%d %H:%M") + " (#{number_to_human_size(report.size)})",
+              opendata_dataset_import_report_path(id: report.id) %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </dd>
+</dl>

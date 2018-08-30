@@ -1,4 +1,4 @@
-module Opendata::Addon::DatasetImporter::License
+module Opendata::Addon::DatasetImport::License
   extend SS::Addon
   extend ActiveSupport::Concern
 

@@ -26,6 +26,9 @@ SS::Application.routes.draw do
       get "search" => "dataset_groups/search#index", on: :collection
     end
     resources :dataset_import, concerns: :deletion, module: :dataset
+    resources :dataset_import_reports, only: [:show, :destroy], concerns: :deletion, module: :dataset do
+      get :dataset, on: :member
+    end
     resources :datasets, concerns: [:deletion, :copy, :command], module: :dataset do
       get "search" => "datasets/search#index", on: :collection
       get :check_for_update, on: :member

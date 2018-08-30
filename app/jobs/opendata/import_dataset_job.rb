@@ -4,7 +4,7 @@ class Opendata::ImportDatasetJob < Cms::ApplicationJob
   end
 
   def perform(*args)
-    Opendata::DatasetImporter.site(site).each do |importer|
+    Opendata::DatasetImport::Importer.site(site).each do |importer|
       importer.import
     end
   end
